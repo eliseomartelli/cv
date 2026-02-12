@@ -1,169 +1,112 @@
-\documentclass[english,a4paper]{europasscv}
-\usepackage[english]{babel}
+\documentclass[10pt,a4paper]{article}
 
-\ecvname{Eliseo Martelli}
-\ecvaddress{Piazza Terza Italia, 1, Mozzagrogna (CH), Italy}
-\ecvmobile{+39 392 504 9974}
-\ecvemail{me@eliseomartelli.it}
-\ecvgithubpage{https://github.com/eliseomartelli}
-\ecvhomepage{https://eliseomartelli.it}
-\ecvdateofbirth{1 September 1998}
-\ecvnationality{Italian}
-\ecvgender{Male}
-\ecvpicture[width=3.8cm]{portrait.jpg}
+\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+
+\newcommand{\resumeItem}[5]{
+    \noindent \textbf{#1} \hfill \textbf{#2}
+    \ifboolexpr{test {\ifstrempty{#3}} and test {\ifstrempty{#4}}}{}{
+        \\
+        \textit{#3} \hfill #4
+    }
+    \ifstrempty{#5}{}{
+        \begin{itemize}[noitemsep,topsep=0pt,leftmargin=1.5em]
+            #5
+        \end{itemize}
+    }
+    \vspace{1em}
+}
+
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+\pagestyle{empty}
 
 \begin{document}
-\begin{europasscv}
-	\ecvpersonalinfo
 
-	\ecvsection{Work Experience}
+\noindent
+\begin{minipage}[c]{0.82\textwidth}
+    {\Huge \textbf{Eliseo Martelli}} \\[4pt]
+    \textbf{Researcher \& Software Developer} \\[4pt]
+    Via Carrù, 9, Torino (TO) 10141, Italy \\
+    +39 392 504 9974 $\cdot$ \href{mailto:me@eliseomartelli.it}{me@eliseomartelli.it} \\
+    \href{https://eliseomartelli.it}{https://eliseomartelli.it} $\cdot$ \href{https://github.com/eliseomartelli}{github.com/eliseomartelli}
+\end{minipage}%
+\begin{minipage}[c]{0.18\textwidth}
+    \begin{flushright}
+        \includegraphics[width=3cm, height=3.8cm, keepaspectratio]{portrait.jpg}
+    \end{flushright}
+\end{minipage}
 
-	\ecvtitle{2017 -- 2018}{Network Technician}
-	\ecvitem{}{Dedalonet S.r.l. \newline Lanciano (CH), Italy}
-	\ecvitem{}{
-		\begin{ecvitemize}
-			\item Network analysis and implementation for third parties;
-			\item Software development and testing for process automation;
-			\item Software development for embedded devices.
-		\end{ecvitemize}
-	}
+\section{Work Experience}
 
-	\ecvtitle{2014 -- 2019}{Independent Android Developer}
-	\ecvitem{}{
-		\begin{ecvitemize}
-			\item Develop and test large Android (Java \& Kotlin) codebases;
-			\item Product marketing and design.
-		\end{ecvitemize}
-	}
+\resumeItem{Researcher \& Software Developer}{2024 -- 2026}{Consortium GARR}{Rome, Italy}{
+    \item Developed a Reproducible Bioinformatics Environment Platform and a distributed computation platform.
+    \item Produced an extensive ecosystem of tools and toolsets for zero-knowledge analysis.
+    \item Responsible for Quality Assurance \& Testing.
+}
 
-	\ecvtitle{Ongoing}{Independent Fullstack Developer}
-	\ecvitem{}{
-		\begin{ecvitemize}
-			\item Develop and test projects for third party clients.
-		\end{ecvitemize}
-	}
+\resumeItem{Software Developer}{2024}{Federazione Gomma Plastica}{Milan, Italy}{
+    \item Fullstack application development for Law Enforcement agencies.
+    \item Built an Android Application, Authentication Platform, and Management Web Application.
+    \item Managed software deployment using Docker.
+}
 
-	\ecvtitle{Ongoing}{Open Source Software Contributor}
-	\ecvitem{}{
-		\begin{ecvitemize}
-			\item Internet of Things platform;
-			\item Software libraries to enhance developer experience;
-		\end{ecvitemize}
-	}
+\resumeItem{Open Source Software Contributor}{Ongoing}{}{}{
+    \item Contributing to Internet of Things platforms and software libraries to enhance developer experience.
+}
 
-	\ecvtitle{2024}{Software Developer}
-	\ecvitem{}{Federazione Gomma Plastica \newline Milan, Italy}
-	\ecvitem{}{
-		\begin{ecvitemize}
-			\item{Fullstack application development for Law Enforcement:
-			            \begin{itemize}
-				            \item Android Application;
-				            \item Authentication Platform;
-				            \item Management Web Application;
-			            \end{itemize}
-			      }
-			\item Software deployment using Docker.
-		\end{ecvitemize}
-	}
+\resumeItem{Independent Fullstack Developer}{2014 -- 2024}{}{}{
+    \item Developing and testing projects for third-party clients.
+}
 
-	\ecvtitle{2024 - Ongoing}{Researcher}
-	\ecvitem{}{Consortium GARR \newline Rome, Italy}
-	\ecvitem{}{
-		\begin{ecvitemize}
-			\item Reproducible Bioinformatics Environment Platform Developer;
-			\item Production of an extensive ecosystem of tools;
-			\item Distributed computation platform;
-			\item Production of toolsets for zero-knowledge analysis;
-			\item Quality Assurance \& Testing;
-		\end{ecvitemize}
-	}
+\resumeItem{Independent Android Developer}{2014 -- 2019}{}{}{
+    \item Developed and tested large Android codebases (Java \& Kotlin).
+    \item Handled product marketing and design.
+}
 
-	\ecvsection{Education and Training}
-	\ecvtitle{2019 -- 2023}{Computer Science Bachelor Degree}
-	\ecvitem{}{Università degli Studi di Torino}
-	\ecvitem{}{
-		\textbf{Thesis}: Edge-computing workload management in heterogeneous environments
-	}
-	\ecvtitle{2023 -- Ongoing}{Computer Science Master Degree}
-	\ecvitem{}{Università degli Studi di Torino}
+\resumeItem{Network Technician}{2017 -- 2018}{Dedalonet S.r.l.}{Lanciano (CH), Italy}{
+    \item Network analysis and implementation for third parties.
+    \item Software development for process automation and embedded devices.
+}
 
-	\ecvsection{Personal Skills}
-	\ecvmothertongue{Italian}
-	\ecvlanguageheader{}
-	\ecvlanguage{English}{C1}{C2}{C1}{C1}{C2}
-	\ecvlanguage{Spanish}{B1}{B1}{A2}{A2}{A2}
-	\ecvlanguagefooter
+\section{Education}
 
-	\ecvblueitem{Communication Skills}{
-		\begin{ecvitemize}
-			\item Team Work: I have worked in various types of teams.
-		\end{ecvitemize}
-	}
+\noindent \textbf{Master Degree in Computer Science} \hfill \textbf{2023 -- Ongoing} \\
+\textit{Università degli Studi di Torino} \\
+\textbf{Thesis}: \textit{ongoing}
 
-	\ecvblueitem{Organisational / Managerial Skills}{
-		\begin{ecvitemize}
-			\item I've organized various one-to-one and one-to-many encounters to engage and connect with people for one of my other skills.
-		\end{ecvitemize}
-	}
+\noindent \textbf{Bachelor Degree in Computer Science} \hfill \textbf{2019 -- 2023} \\
+\textit{Università degli Studi di Torino} \\
+\textbf{Thesis}: Edge-computing workload management in heterogeneous environments
 
-	\ecvdigitalcompetence{\ecvProficient}{\ecvIndependent}{\ecvProficient}{\ecvIndependent}{\ecvIndependent}
+\section{Technical Skills}
 
-	\ecvblueitem{Computer skills}{
-		\begin{ecvitemize}
-			\item Competent with most Microsoft Office software;
-			\item{
-			            Computer Languages:
-			            \begin{itemize}
-				            \item Python;
-				            \item Go;
-				            \item Java;
-				            \item Kotlin;
-				            \item Swift;
-				            \item Javascript;
-				            \item Typescript;
-				            \item C;
-				            \item Dart.
-			            \end{itemize}
-			            Protocols:
-			            \begin{itemize}
-				            \item XML;
-				            \item JSON;
-				            \item REST;
-				            \item RPC;
-				            \item APIs.
-			            \end{itemize}
-			            Virtualization and Containerization:
-			            \begin{itemize}
-				            \item Docker;
-				            \item Podman;
-				            \item LibVirt;
-				            \item VMWare;
-				            \item Proxmox;
-				            \item Xen.
-			            \end{itemize}
-			            Databases:
-			            \begin{itemize}
-				            \item MySQL | MariaDB;
-				            \item PostgreSQL;
-				            \item SQLite;
-				            \item MongoDB.
-			            \end{itemize}
-			            Tools:
-			            \begin{itemize}
-				            \item Git;
-				            \item Vim;
-				            \item GitHub.
-			            \end{itemize}
-			      }
-			\item Video and Graphic content creation using Adobe and Apple
-			software products.
-		\end{ecvitemize}
-	}
-	\ecvblueitem{Other Skills}{
-		\begin{ecvitemize}
-			\item Visual storytelling using self-produced photographic assets.
-		\end{ecvitemize}
-	}
-	\ecvblueitem{Driving licence}{B}
-\end{europasscv}
+\noindent
+\begin{tabular}{@{}ll}
+\textbf{Languages:} & Python, Go, Java, Kotlin, Swift, Javascript, Typescript, C, Dart \\
+\textbf{Protocols \& APIs:} & XML, JSON, REST, RPC, APIs, GraphQL \\
+\textbf{Infrastructure:} & Docker, Podman, LibVirt, VMWare, Proxmox, Xen \\
+\textbf{Databases:} & MySQL / MariaDB, PostgreSQL, SQLite, MongoDB \\
+\textbf{Tools:} & Git, Vim, GitHub, Xcode, Android Studio, Microsoft Office, Adobe Creative Suite \\
+\textbf{Other:} & Visual storytelling, Graphic content creation
+\end{tabular}
+
+\section{Languages}
+\noindent
+\textbf{Italian:} Native \quad $\cdot$ \quad
+\textbf{English:} Proficient \quad $\cdot$ \quad
+\textbf{Spanish:} Basic
+
+\section{Additional Information}
+\noindent
+\textbf{Driving License:} B
+
 \end{document}
